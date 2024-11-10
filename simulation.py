@@ -8,14 +8,11 @@ import threading
 import pygame
 import sys
 import os
-
-
 defaultRed = 150
 defaultYellow = 5
 defaultGreen = 20
 defaultMinimum = 10
 defaultMaximum = 60
-
 signals = []
 noOfSignals = 4
 simTime = 300       # change this to change time of simulation
@@ -215,10 +212,7 @@ class Vehicle(pygame.sprite.Sprite):
                         self.y -= 2.5
                         if(self.rotateAngle==90):
                             self.turned = 1
-                            # path = "images/" + directionNumbers[((self.direction_number+1)%noOfSignals)] + "/" + self.vehicleClass + ".png"
-                            # self.x = mid[self.direction]['x']
-                            # self.y = mid[self.direction]['y']
-                            # self.currentImage = pygame.image.load(path)
+                            
                     else:
                         if(self.index==0 or self.y>(vehicles[self.direction][self.lane][self.index-1].y + vehicles[self.direction][self.lane][self.index-1].currentImage.get_rect().height +  gap2) or self.x>(vehicles[self.direction][self.lane][self.index-1].x + gap2)):
                             self.y -= self.speed
